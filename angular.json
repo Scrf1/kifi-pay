@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "kifi-pay"
+    }
+  },
+  "defaultProject": "kifi-pay",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,0 +1,29 @@
+section {
+  //     justify-content: center;
+  //     align-items: center;
+  //     display: flex;
+      height: 90vh;
+   }
+  .payment-container {
+      border: solid 2px gray;
+      margin: auto;
+      padding-left: 4vw;
+      padding-right: 4vw;
+      padding-top: 4vh;
+      padding-bottom: 4vh;
+  }
+
+  #paymentImg {
+      width: 14vw;
+      height: auto;
+  }
+
+  .company {
+      width: 18vw;
+      height: auto;
+  }
+
+  #total {
+      color: red;
+      font-weight: bold;
+  }
