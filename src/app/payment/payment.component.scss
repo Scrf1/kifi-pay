@@ -2,7 +2,7 @@ section {
   //     justify-content: center;
   //     align-items: center;
   //     display: flex;
-      height: 90vh;
+      //height: 90vh;
    }
   .payment-container {
       border: solid 2px gray;
@@ -26,4 +26,23 @@ section {
   #total {
       color: red;
       font-weight: bold;
+  }
+
+  footer {
+    height: 30px;
+  }
+  footer a, nav a {
+    color: white;
+  }
+
+  @media only screen and (max-width: 576px) {
+    .text-xs {
+      font-size: small;
+    }
+    select {
+      height: 32px;
+    }
+    h1 {
+      font-size: medium;
+    }
   }
