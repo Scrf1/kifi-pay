@@ -1,0 +1,71 @@
+<app-kifi-header></app-kifi-header>
+
+<section class="d-flex justify-content-center align-items-center">
+
+  <div class="container payment-container">
+
+    <div class="row d-flex justify-content-between">
+      <img src="assets/VOGT-logo.jpg" alt="logo1" class="rounded mx-auto d-block company">
+      <img src="https://mareconversionpro.fr/wp-content/uploads/2017/05/bootstrap-logo-300x300.jpg" alt="logo2" class="rounded mx-auto d-block company">
+    </div>
+    <br>
+    <form class="justify-content-center">
+      <div class="form-group row">
+        <label for="matricule" class="col-sm-4 col-lg-2 col-form-label text-xs">Matricule de l'élève</label>
+        <div class="col-sm-8 col-lg-10">
+          <input type="text" class="form-control col-10 text-xs" id="matricule">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="prenom_eleve" class="col-sm-4 col-lg-2 col-form-label text-xs">Prénom de l'élève</label>
+        <div class="col-sm-8 col-lg-10">
+          <input type="text" class="form-control col-10 text-xs" id="prenom_eleve">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="nom_eleve" class="col-sm-4 col-lg-2 col-form-label text-xs">Nom de l'élève</label>
+        <div class="col-sm-8 col-lg-10">
+          <input type="text" class="form-control col-10 text-xs" id="nom_eleve">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="classe" class="col-sm-4 col-lg-2 col-form-label text-xs">Classe</label>
+        <select class="form-control col-md-5 col-lg-4 col-5 text-xs ml-3"
+                  id="classe"
+                  [(ngModel)]="selected_class">
+            <option *ngFor="let c of classes" [value]="c" class="text-xs">
+              {{c}}
+            </option>
+          </select>
+      </div>
+      <div class="form-group row">
+        <label for="nom_payeur" class="col-sm-4 col-lg-2 col-form-label text-xs">Nom du payeur</label>
+        <div class="col-sm-8 col-lg-10">
+          <input type="text" class="form-control col-10 text-xs" id="nom_payeur">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="num_payeur" class="col-sm-4 col-lg-2 col-form-label text-xs">Numéro du payeur</label>
+        <div class="col-sm-8 col-lg-10">
+          <input type="text" class="form-control col-10 text-xs" id="num_payeur">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="email_payeur" class="col-sm-4 col-lg-2 col-form-label text-xs">Email du payeur</label>
+        <div class="col-sm-8 col-lg-10">
+          <input type="email" class="form-control col-10 text-xs" id="email_payeur">
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <button type="button" class="btn btn-secondary text-xs">Précédent</button>
+        <button type="submit" class="btn btn-primary text-xs">Continuer</button>
+      </div>
+    </form>
+
+  </div>
+
+</section>
+
+<br>
+
+<app-kifi-footer></app-kifi-footer>

@@ -12,6 +12,7 @@ import { Payment3Component } from './payment3/payment3.component';
 import { KifiFooterComponent } from './commons/kifi-footer/kifi-footer.component';
 import { KifiHeaderComponent } from './commons/kifi-header/kifi-header.component';
 import { Payment4Component } from './payment4/payment4.component';
+import { StudentsInfoComponent } from './students-info/students-info.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'personal-infos',
     component: Payment2Component,
+  },
+  {
+    path: 'student-infos',
+    component: StudentsInfoComponent,
   },
   {
     path: 'validate-payment',
@@ -47,7 +52,8 @@ const routes: Routes = [
     Payment3Component,
     KifiFooterComponent,
     KifiHeaderComponent,
-    Payment4Component
+    Payment4Component,
+    StudentsInfoComponent
   ],
   imports: [
     BrowserModule,

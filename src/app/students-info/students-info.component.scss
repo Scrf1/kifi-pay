@@ -11,29 +11,8 @@
   padding-top: 4vh;
   padding-bottom: 4vh;
 }
-.details {
-  margin-left: -4vw;
-}
-#paymentImg {
-  width: 6vw;
-  height: auto;
-}
-figure img{
-  margin-left: 2vw;
-}
-
 @media only screen and (max-width: 576px) {
   .text-xs {
     font-size: small;
-  }
-  figure img{
-    margin: 2vw;
-  }
-  #paymentImg {
-    width: 10vw;
-    height: auto;
-  }
-  h3 {
-    font-size: medium;
   }
 }
