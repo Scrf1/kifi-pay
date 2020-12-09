@@ -1,11 +1,6 @@
-section {
-  //     justify-content: center;
-  //     align-items: center;
-  //     display: flex;
-      //height: 90vh;
-   }
   .payment-container {
-      border: solid 2px gray;
+      border-left: solid 2px gray;
+      border-right: solid 2px gray;
       margin: auto;
       padding-left: 4vw;
       padding-right: 4vw;
@@ -28,12 +23,6 @@ section {
       font-weight: bold;
   }
 
-  footer {
-    height: 30px;
-  }
-  footer a, nav a {
-    color: white;
-  }
 
   @media only screen and (max-width: 576px) {
     .text-xs {

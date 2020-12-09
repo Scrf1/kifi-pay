@@ -1,0 +1,42 @@
+.company {
+  width: 18vw;
+  height: auto;
+}
+.payment-container {
+  border-left: solid 2px gray;
+  border-right: solid 2px gray;
+  margin: auto;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+}
+.details {
+  margin-left: -4vw;
+}
+#paymentImg {
+  width: 6vw;
+  height: auto;
+}
+figure img{
+  margin-left: 2vw;
+}
+
+@media only screen and (max-width: 576px) {
+  .details {
+    //margin-left: -20vw;
+  }
+  .text-xs {
+    font-size: small;
+  }
+  figure img{
+    margin: 2vw;
+  }
+  #paymentImg {
+    width: 10vw;
+    height: auto;
+  }
+  h3 {
+    font-size: medium;
+  }
+}

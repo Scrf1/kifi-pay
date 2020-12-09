@@ -7,11 +7,28 @@ import { AppComponent } from './app.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ErrorComponent } from './error/error.component';
 import { FormsModule } from '@angular/forms';
+import { Payment2Component } from './payment2/payment2.component';
+import { Payment3Component } from './payment3/payment3.component';
+import { KifiFooterComponent } from './commons/kifi-footer/kifi-footer.component';
+import { KifiHeaderComponent } from './commons/kifi-header/kifi-header.component';
+import { Payment4Component } from './payment4/payment4.component';
 
 const routes: Routes = [
   {
     path: 'payment',
     component: PaymentComponent,
+  },
+  {
+    path: 'personal-infos',
+    component: Payment2Component,
+  },
+  {
+    path: 'validate-payment',
+    component: Payment3Component,
+  },
+  {
+    path: 'payment-infos',
+    component: Payment4Component,
   },
   {
     path: 'error',
@@ -25,7 +42,12 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     PaymentComponent,
-    ErrorComponent
+    ErrorComponent,
+    Payment2Component,
+    Payment3Component,
+    KifiFooterComponent,
+    KifiHeaderComponent,
+    Payment4Component
   ],
   imports: [
     BrowserModule,
