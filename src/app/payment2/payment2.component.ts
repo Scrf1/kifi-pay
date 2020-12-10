@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Information } from '../models/information';
 
 @Component({
   selector: 'app-payment2',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Payment2Component implements OnInit {
 
-  constructor() { }
+  information: Information;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    console.log('RECEIVED DATA ===> ', this.route.snapshot.paramMap.get('paymentType'))
   }
 
 }

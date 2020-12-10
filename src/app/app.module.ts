@@ -14,6 +14,11 @@ import { KifiHeaderComponent } from './commons/kifi-header/kifi-header.component
 import { Payment4Component } from './payment4/payment4.component';
 import { StudentsInfoComponent } from './students-info/students-info.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ReactiveFormsModule } from '@angular/forms';;
+
 const routes: Routes = [
   {
     path: '',
@@ -65,9 +70,18 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
 
+    BrowserAnimationsModule,
     FormsModule,
+    MatDialogModule,
+    MatSnackBarModule,
+
+    ReactiveFormsModule,
   ],
-  exports: [RouterModule],
+  exports: [
+    RouterModule,
+    MatDialogModule,
+    MatSnackBarModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

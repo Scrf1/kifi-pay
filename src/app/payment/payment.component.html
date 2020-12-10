@@ -42,7 +42,10 @@
       </div>
     </div>
     <div class="d-flex justify-content-end">
-      <button type="button" class="btn btn-primary text-xs">Continuer</button>
+      <button type="button" class="btn btn-primary text-xs" (click)="goToInformationPage()"
+      data-toggle="popover" data-content="Vous n'avez pas choisi le ">
+        Continuer
+    </button>
     </div>
 
   </div>
@@ -51,3 +54,14 @@
 <br>
 
 <app-kifi-footer></app-kifi-footer>
+
+<script>
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+  $(function () {
+    $('.error-popover').popover({
+      container: 'body'
+    })
+  })
+</script>

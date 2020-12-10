@@ -9,51 +9,63 @@
       <img src="https://mareconversionpro.fr/wp-content/uploads/2017/05/bootstrap-logo-300x300.jpg" alt="logo2" class="rounded mx-auto d-block company">
     </div>
     <br>
-    <form class="justify-content-center">
+    <form class="justify-content-center" [formGroup]="studentForm" (ngSubmit)="onSubmit()" method="post" action="">
       <div class="form-group row">
         <label for="matricule" class="col-sm-4 col-lg-2 col-form-label text-xs">Matricule de l'élève</label>
         <div class="col-sm-8 col-lg-10">
-          <input type="text" class="form-control col-10 text-xs" id="matricule">
+          <input type="text" class="form-control col-10 text-xs" id="matricule" formControlName="registrationNumber" name="registrationNumber">
         </div>
       </div>
       <div class="form-group row">
         <label for="prenom_eleve" class="col-sm-4 col-lg-2 col-form-label text-xs">Prénom de l'élève</label>
         <div class="col-sm-8 col-lg-10">
-          <input type="text" class="form-control col-10 text-xs" id="prenom_eleve">
+          <input type="text" class="form-control col-10 text-xs" id="prenom_eleve" formControlName="studentFirstName" name="studentFirstName">
         </div>
       </div>
       <div class="form-group row">
         <label for="nom_eleve" class="col-sm-4 col-lg-2 col-form-label text-xs">Nom de l'élève</label>
         <div class="col-sm-8 col-lg-10">
-          <input type="text" class="form-control col-10 text-xs" id="nom_eleve">
+          <input type="text" class="form-control col-10 text-xs" id="nom_eleve" formControlName="studentLastName" name="studentLastName">
+          <div *ngIf="studentLastName.invalid && (studentLastName.dirty || studentLastName.touched)">
+            <small style="color: red;">Veuillez entrer le nom de l'élève</small>
+          </div>
         </div>
       </div>
       <div class="form-group row">
         <label for="classe" class="col-sm-4 col-lg-2 col-form-label text-xs">Classe</label>
         <select class="form-control col-md-5 col-lg-4 col-5 text-xs ml-3"
                   id="classe"
-                  [(ngModel)]="selected_class">
+                  formControlName="class">
             <option *ngFor="let c of classes" [value]="c" class="text-xs">
               {{c}}
             </option>
           </select>
+          <div *ngIf="class.invalid && (class.dirty || class.touched)">
+            <small style="color: red;">Veuillez choisir la classe de l'élève</small>
+          </div>
       </div>
       <div class="form-group row">
         <label for="nom_payeur" class="col-sm-4 col-lg-2 col-form-label text-xs">Nom du payeur</label>
         <div class="col-sm-8 col-lg-10">
-          <input type="text" class="form-control col-10 text-xs" id="nom_payeur">
+          <input type="text" class="form-control col-10 text-xs" id="nom_payeur" formControlName="payerName" name="payerName">
+          <div *ngIf="payerName.invalid && (payerName.dirty || payerName.touched)">
+            <small style="color: red;">Veuillez entrer le nom du payeur</small>
+          </div>
         </div>
       </div>
       <div class="form-group row">
         <label for="num_payeur" class="col-sm-4 col-lg-2 col-form-label text-xs">Numéro du payeur</label>
         <div class="col-sm-8 col-lg-10">
-          <input type="text" class="form-control col-10 text-xs" id="num_payeur">
+          <input type="text" class="form-control col-10 text-xs" id="num_payeur" formControlName="payerNumber" name="payerNumber">
+          <div *ngIf="payerNumber.invalid && (payerNumber.dirty || payerNumber.touched)">
+            <small style="color: red;">Veuillez entrer le numéro du payeur</small>
+          </div>
         </div>
       </div>
       <div class="form-group row">
         <label for="email_payeur" class="col-sm-4 col-lg-2 col-form-label text-xs">Email du payeur</label>
         <div class="col-sm-8 col-lg-10">
-          <input type="email" class="form-control col-10 text-xs" id="email_payeur">
+          <input type="email" class="form-control col-10 text-xs" id="email_payeur" formControlName="payerEmail" name="payerEmail">
         </div>
       </div>
       <div class="d-flex justify-content-between">

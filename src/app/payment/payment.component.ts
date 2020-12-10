@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NotificationService } from '../commons/notification.service';
 
 @Component({
   selector: 'app-payment',
@@ -16,11 +18,14 @@ export class PaymentComponent implements OnInit {
 
   BASE_URL_FOR_IMAGES = 'assets/';
 
-  selected_service: string;
+  selected_service: string = '';
   corresponding_image: string;
 
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private notificationService: NotificationService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -35,4 +40,10 @@ export class PaymentComponent implements OnInit {
     console.log('CORRESPONDING IMAGE -> ', this.corresponding_image);
   }
 
+  goToInformationPage() {
+    if(this.selected_service == '' || this.selected_service == null)
+      this.notificationService.notifyBlue("Vous n'avez pas choisi de mode de paiement");
+    else
+      this.router.navigate(['/student-infos', {paymentType: this.selected_service}]);
+  }
 }

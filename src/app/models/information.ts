@@ -16,5 +16,5 @@ export class Information {
   paymentType: string;
   kifipayFees: number; // Frais de commission kifipay
   bill: number; // Facture correspondant aux frais d'inscription
-
+  mobilePaymentPhoneNumber: string;
 }
