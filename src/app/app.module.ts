@@ -16,6 +16,11 @@ import { StudentsInfoComponent } from './students-info/students-info.component';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/payment',
+    pathMatch: 'full'
+  },
+  {
     path: 'payment',
     component: PaymentComponent,
   },
@@ -36,7 +41,7 @@ const routes: Routes = [
     component: Payment4Component,
   },
   {
-    path: 'error',
+    path: '**',
     component: ErrorComponent,
   },
   // { path: '**', redirectTo: 'error' },
