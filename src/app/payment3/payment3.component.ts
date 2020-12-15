@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Information } from '../models/information';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-payment3',
@@ -20,7 +21,8 @@ export class Payment3Component implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) {
     this.numForm.setValue(
       {
@@ -44,6 +46,8 @@ export class Payment3Component implements OnInit {
 
   get mobilePaymentPhoneNumber() {return this.numForm.get('mobilePaymentPhoneNumber');}
 
-
+  goBack() {
+    this.location.back();
+  }
 
 }

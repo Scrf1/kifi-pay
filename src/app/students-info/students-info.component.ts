@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Information } from '../models/information';
+import {Location} from '@angular/common';
+import { NotificationService } from '../commons/notification.service';
 
 @Component({
   selector: 'app-students-info',
@@ -31,7 +33,9 @@ export class StudentsInfoComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private location: Location,
+    private notificationService: NotificationService
   ) {
     this.studentForm.setValue( {
       payerName: '',
@@ -50,6 +54,8 @@ export class StudentsInfoComponent implements OnInit {
 
   onSubmit(): void {
     console.log('IS FORM VALID? ==> ', this.studentForm.valid);
+    if(this.studentForm.invalid)
+      this.notificationService.notifyRed('Les informations enregistrées sont invalides');
     if(this.studentForm.valid) {
       this.information.payerName = this.studentForm.controls['payerName'].value;
       this.information.payerNumber = this.studentForm.controls['payerNumber'].value;
@@ -58,8 +64,13 @@ export class StudentsInfoComponent implements OnInit {
       this.information.class = this.studentForm.controls['class'].value;
       this.information.registrationNumber = this.studentForm.controls['registrationNumber'].value;
       this.information.paymentType = this.route.snapshot.paramMap.get('paymentType');
+
       this.router.navigate(['/validate-payment', {information: JSON.stringify(this.information)}]);
     }
+  }
+
+  goBack() {
+    this.location.back();
   }
 
   get payerName() {return this.studentForm.get('payerName')}

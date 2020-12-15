@@ -37,13 +37,22 @@ export class PaymentComponent implements OnInit {
     if(service == this.paymentTypes[2]) this.corresponding_image = this.BASE_URL_FOR_IMAGES +  'YUP-logo.png';
     if(service == this.paymentTypes[3]) this.corresponding_image = this.BASE_URL_FOR_IMAGES +  'EU-logo.png';
 
+
     console.log('CORRESPONDING IMAGE -> ', this.corresponding_image);
   }
 
   goToInformationPage() {
+    let paymentTypeToUse: string = '';
+
     if(this.selected_service == '' || this.selected_service == null)
       this.notificationService.notifyBlue("Vous n'avez pas choisi de mode de paiement");
-    else
-      this.router.navigate(['/student-infos', {paymentType: this.selected_service}]);
+    else {
+      if(this.selected_service == this.paymentTypes[0]) paymentTypeToUse = 'OM';
+      if(this.selected_service == this.paymentTypes[1]) paymentTypeToUse = 'MOMO';
+      if(this.selected_service == this.paymentTypes[2]) paymentTypeToUse = 'YUP';
+      if(this.selected_service == this.paymentTypes[3]) paymentTypeToUse = 'EU';
+
+      this.router.navigate(['/student-infos', {paymentType: paymentTypeToUse}]);
+    }
   }
 }

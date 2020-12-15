@@ -9,7 +9,7 @@
       <img src="https://mareconversionpro.fr/wp-content/uploads/2017/05/bootstrap-logo-300x300.jpg" alt="logo2" class="rounded mx-auto d-block company">
     </div>
     <br>
-    <form class="justify-content-center" [formGroup]="studentForm" (ngSubmit)="onSubmit()" method="post" action="">
+    <form class="justify-content-center" [formGroup]="studentForm" (ngSubmit)="onSubmit()">
       <div class="form-group row">
         <label for="matricule" class="col-sm-4 col-lg-2 col-form-label text-xs">Matricule de l'élève</label>
         <div class="col-sm-8 col-lg-10">
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="form-group row">
-        <label for="nom_eleve" class="col-sm-4 col-lg-2 col-form-label text-xs">Nom de l'élève</label>
+        <label for="nom_eleve" class="col-sm-4 col-lg-2 col-form-label text-xs">Nom de l'élève <span style="color: red;">*</span> </label>
         <div class="col-sm-8 col-lg-10">
           <input type="text" class="form-control col-10 text-xs" id="nom_eleve" formControlName="studentLastName" name="studentLastName">
           <div *ngIf="studentLastName.invalid && (studentLastName.dirty || studentLastName.touched)">
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="form-group row">
-        <label for="classe" class="col-sm-4 col-lg-2 col-form-label text-xs">Classe</label>
+        <label for="classe" class="col-sm-4 col-lg-2 col-form-label text-xs">Classe <span style="color: red;">*</span></label>
         <select class="form-control col-md-5 col-lg-4 col-5 text-xs ml-3"
                   id="classe"
                   formControlName="class">
@@ -45,7 +45,7 @@
           </div>
       </div>
       <div class="form-group row">
-        <label for="nom_payeur" class="col-sm-4 col-lg-2 col-form-label text-xs">Nom du payeur</label>
+        <label for="nom_payeur" class="col-sm-4 col-lg-2 col-form-label text-xs">Nom du payeur <span style="color: red;">*</span></label>
         <div class="col-sm-8 col-lg-10">
           <input type="text" class="form-control col-10 text-xs" id="nom_payeur" formControlName="payerName" name="payerName">
           <div *ngIf="payerName.invalid && (payerName.dirty || payerName.touched)">
@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="form-group row">
-        <label for="num_payeur" class="col-sm-4 col-lg-2 col-form-label text-xs">Numéro du payeur</label>
+        <label for="num_payeur" class="col-sm-4 col-lg-2 col-form-label text-xs">Numéro du payeur <span style="color: red;">*</span></label>
         <div class="col-sm-8 col-lg-10">
           <input type="text" class="form-control col-10 text-xs" id="num_payeur" formControlName="payerNumber" name="payerNumber">
           <div *ngIf="payerNumber.invalid && (payerNumber.dirty || payerNumber.touched)">
@@ -69,8 +69,8 @@
         </div>
       </div>
       <div class="d-flex justify-content-between">
-        <button type="button" class="btn btn-secondary text-xs">Précédent</button>
-        <button type="submit" class="btn btn-primary text-xs">Continuer</button>
+        <button type="button" class="btn btn-secondary text-xs" (click)="goBack()">Précédent</button>
+        <button type="submit" class="btn btn-primary text-xs" [disabled]="studentForm.invalid">Continuer</button>
       </div>
     </form>
 
